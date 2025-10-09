@@ -1,0 +1,42 @@
+<header class="cabecalho">
+    <div class="logo"><a routerLink="/home"><img src="/assets/logo/ead.png" class="img-logo"></a></div>
+
+    <nav class="navbar-desktop">
+        <a routerLink="/home" routerLinkActive="active">
+        <i class="pi pi-home"></i>
+            <span>Início</span>
+        </a>
+        <a routerLink="/sobre" routerLinkActive="active">
+            <i class="pi pi-info"></i>
+            <span>Sobre Nós</span>
+        </a>
+        <a routerLink="/servicos" routerLinkActive="active">
+            <i class="pi pi-briefcase"></i>
+            <span>Serviços</span>
+        </a>
+        <a routerLink="/contato" routerLinkActive="active">
+            <i class="pi pi-phone"></i>
+            <span>Contato</span>
+        </a>
+    </nav>
+
+
+    <div class="menu-mobile">
+        <input type="checkbox" id="menu" hidden />
+        <label for="menu" class="menu-sanduiche"></label>
+        <nav class="navbar-mobile">
+            <a routerLink="/home" routerLinkActive="active">
+                <img src="/assets/home.svg" alt="home" style="width:22px;margin-right:8px;">Início
+            </a>
+            <a routerLink="/sobre" routerLinkActive="active">
+                <img src="/assets/info.svg" alt="Sobre" style="width:22px;margin-right:8px;">Sobre Nós
+            </a>
+            <a routerLink="/servicos" routerLinkActive="active">
+                <img src="/assets/services.svg" alt="Serviços" style="width:22px;margin-right:8px;">Serviços
+            </a>
+            <a routerLink="/contato" routerLinkActive="active">
+                <img src="/assets/call.svg" alt="Contato" style="width:22px;margin-right:8px;">Contato
+            </a>
+        </nav>
+    </div>
+</header>

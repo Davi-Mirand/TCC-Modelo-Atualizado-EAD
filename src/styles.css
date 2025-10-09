@@ -1,0 +1,73 @@
+/* You can add global styles to this file, and also import other style files */
+@import "primeicons/primeicons.css";
+
+
+
+:root {
+    --cor-primaria: #ba3e00;
+    --cor-secundaria: #ffffff;
+    --cor-terciaria: #c13b1a;
+    --cor-quarternaria: #970000;
+    --cor-quintinaria: #2b2929;
+    --cor-quinaria: #ff5500;
+
+
+    --cor-fundo: #fff5e0;
+
+    --borda-arredondada: 12px;
+    --transicao: all 0.3s ease;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    caret-color: transparent;
+    box-sizing: border-box;
+}
+
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #a89f9f49;
+    color: var(--cor-quintinaria);
+    display: flex;
+    flex-direction: column;
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden !important;
+}
+
+app-root {
+    flex: 1 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+/* O main ocupa todo o espaço disponível entre o cabeçalho e o rodapé */
+main {
+    flex: 1 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+/* Deixa apenas o botão sempre fixo */
+[vw-access-button] {
+    z-index: 999999 !important;
+    position: fixed !important;
+    bottom: 24px !important;
+    right: 24px !important;
+}
+
+/* Mantém o wrapper do plugin acima do site, mas sem forçar "fixed" */
+[vw-plugin-wrapper],
+.vw-plugin-wrapper,
+.vw-plugin-top-wrapper {
+    z-index: 999999 !important;
+}
