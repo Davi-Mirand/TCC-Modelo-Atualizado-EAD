@@ -1,11 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { MenubarModule } from 'primeng/menubar';
 import { MenuItem } from 'primeng/api';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-cabecario',
   templateUrl: './cabecario.component.html',
-  styleUrls: ['./cabecario.component.css']
+  styleUrls: ['./cabecario.component.css'],
+  imports:[MenubarModule,CommonModule]
 })
 export class CabecarioComponent implements OnInit {
 
