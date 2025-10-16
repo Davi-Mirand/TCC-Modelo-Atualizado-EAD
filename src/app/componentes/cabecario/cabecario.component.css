@@ -1,148 +1,61 @@
 .cabecalho {
     display: flex;
     align-items: center;
-    background-color: var(--cor-primaria);
-    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.10);
-    padding: 1.5em 2em;
+    justify-content: space-between;
+    background-color: #d6450d;
+    padding: 0.5rem 1rem;
     position: sticky;
     top: 0;
     z-index: 1000;
-}
-
-.logo {
-    margin-right: auto; /* Mantém o logo na esquerda */
-}
-
-.img-logo {
-    width: 70px;
-    border-radius: 100%;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-}
-
-.img-logo:hover {
-    transform: scale(1.5);
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
-    transition: 0.3s;
-    cursor: pointer;
-}
-
-.navbar-desktop {
-    display: flex;
-    justify-content: center; /* Centraliza os links no espaço disponível */
-    flex-grow: 1;
-    gap: 1.2em;
-}
-
-.navbar-desktop a {
+  }
+  
+  .img-logo {
+    height: 50px;
+  }
+  
+  .menu-desktop {
+    flex: 1;
+    margin-left: 2rem;
+  }
+  
+  .menu-mobile {
+    display: none;
+    color: white;
+    font-size: 1.4rem;
+  }
+  
+  /* Responsividade */
+  @media (max-width: 768px) {
+    .menu-desktop {
+      display: none !important;
+    }
+  
+    .menu-mobile {
+      display: inline-flex !important;
+    }
+  }
+  
+  /* Estilo do Drawer */
+  .drawer-links {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
+  }
+  
+  .drawer-links li {
+    margin: 0.8rem 0;
+  }
+  
+  .drawer-links a {
     display: flex;
     align-items: center;
-    gap: 8px; /* espaço entre ícone e texto */
-    font-size: 1.15rem; /* aumenta um pouco a fonte */
-    font-weight: 600;
-    color: var(--cor-secundaria);
+    gap: 0.6rem;
     text-decoration: none;
-    padding: 8px 14px; /* área clicável maior */
-    border-radius: 8px; /* suaviza o hover */
-    transition: background 0.3s, transform 0.2s;
-}
-
-.navbar-desktop a:hover {
-    background-color: var(--cor-terciaria);
-    box-shadow: 1px 1px 10px var(--cor-terciaria);
-    transform: scale(1.05); /* leve aumento no hover */
-}
-
-.active {
-    background-color: var(--cor-terciaria);
-    box-shadow: 1px 1px 10px var(--cor-terciaria);
-}
-
-.menu-mobile {
-    display: none;
-    position: relative;
-}
-
-.navbar-mobile {
-    display: none;
-    flex-direction: column;
-    position: absolute;
-    top: 3.5em;
-    right: 0;
-    background-color: var(--cor-primaria);
-    padding: 1em 2em;
-    border-radius: 0 0 0 16px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
-    min-width: 180px;
-    opacity: 0;
-    transform: translateY(-20px);
-    transition: opacity 0.4s, transform 0.4s;
-    z-index: 100;
-}
-
-@media screen and (max-width: 768px) {
-    .navbar-desktop {
-        display: none;
-    }
-
-    .menu-mobile {
-        display: flex;
-        align-items: center;
-        justify-content: flex-end;
-        background-color: var(--cor-primaria);
-        width: 100%;
-        position: relative;
-    }
-
-    .menu-mobile input[type="checkbox"] {
-        display: none;
-    }
-
-    label.menu-sanduiche {
-        display: block;
-        width: 40px;
-        height: 40px;
-        background-image: url('/assets/menu.svg');
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: 2em;
-        padding: 8px;
-        border-radius: 50%;
-        transition: background 0.3s;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-    }
-
-    label.menu-sanduiche:hover {
-        cursor: pointer;
-        background-color: var(--cor-quinaria);
-        border-radius: 50%;
-        transition: 0.3s;
-        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
-    }
-
-    .menu-mobile input[type="checkbox"]:checked~.navbar-mobile {
-        display: flex;
-        opacity: 1;
-        transform: translateY(0);
-        pointer-events: auto;
-    }
-
-    .navbar-mobile a {
-        display: flex;
-        align-items: center;
-        text-decoration: none;
-        color: var(--cor-secundaria);
-        padding: 0.8em 0.5em;
-        font-size: 1.1rem;
-        border-radius: 8px;
-        margin: 0.2em 0;
-        font-weight: 500;
-        transition: background 0.3s, color 0.3s, transform 0.2s;
-    }
-
-    .navbar-mobile a:hover {
-        background-color: var(--cor-terciaria);
-        color: #fff;
-        transform: translateX(8px) scale(1.05);
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-    }
-}
+    color: #333;
+    font-weight: 500;
+  }
+  
+  .drawer-links a:hover {
+    color: #d6450d;
+  }
+  

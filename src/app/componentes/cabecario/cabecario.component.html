@@ -1,5 +1,32 @@
 <header class="cabecalho">
-    <div class="logo"><a routerLink="/home"><img src="/assets/logo/ead.png" class="img-logo"></a></div>
-
-    <p-menubar [model]="items" />
-</header>
+    <div class="logo">
+      <a routerLink="/home">
+        <img src="/assets/logo/ead.png" class="img-logo" alt="Logo EAD" />
+      </a>
+    </div>
+  
+    <!-- Menu desktop -->
+    <p-menubar [model]="items" class="menu-desktop"></p-menubar>
+  
+    <!-- Botão sanduíche (mobile) -->
+    <button
+      pButton
+      icon="pi pi-bars"
+      class="p-button-text p-button-rounded menu-mobile"
+      (click)="drawerVisivel = true"
+    ></button>
+  
+    <!-- Drawer lateral (mobile) -->
+    <p-drawer [(visible)]="drawerVisivel" position="right">
+      <h3>Menu</h3>
+      <ul class="drawer-links">
+        <li *ngFor="let item of items">
+          <a [routerLink]="item.routerLink" (click)="drawerVisivel = false">
+            <i [class]="item.icon"></i>
+            <span>{{ item.label }}</span>
+          </a>
+        </li>
+      </ul>
+    </p-drawer>
+  </header>
+  

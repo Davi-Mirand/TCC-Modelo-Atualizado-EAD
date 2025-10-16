@@ -1,41 +1,24 @@
-import { Component, OnInit } from '@angular/core';
-import { MenubarModule } from 'primeng/menubar';
-import { MenuItem } from 'primeng/api';
+import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
+import { MenubarModule } from 'primeng/menubar';
+import { ButtonModule } from 'primeng/button';
+import { DrawerModule } from 'primeng/drawer';
 
 @Component({
   selector: 'app-cabecario',
+  standalone: true,
+  imports: [CommonModule, RouterModule, MenubarModule, ButtonModule, DrawerModule],
   templateUrl: './cabecario.component.html',
-  styleUrls: ['./cabecario.component.css'],
-  imports:[MenubarModule,CommonModule]
+  styleUrls: ['./cabecario.component.css']
 })
-export class CabecarioComponent implements OnInit {
+export class CabecarioComponent {
+  drawerVisivel = false;
 
-  items: MenuItem[] | undefined;
-
-  ngOnInit() {
-      this.items = [
-          {
-              label: 'Início',
-              icon: 'pi pi-home',
-              routerLink: '/home'
-          },
-          {
-              label: 'Sobre Nós',
-              icon: 'pi pi-info',
-              routerLink: '/sobre'
-          },
-          {
-              label: 'Serviços',
-              icon: 'pi pi-briefcase',
-              routerLink: '/servicos'
-          },
-          {
-              label: 'Contato',
-              icon: 'pi pi-phone',
-              routerLink: '/contato'
-          }
-      ];
-  }
-
+  items = [
+    { label: 'Home', icon: 'pi pi-home', routerLink: '/home' },
+    { label: 'Cursos', icon: 'pi pi-book', routerLink: '/cursos' },
+    { label: 'Professores', icon: 'pi pi-users', routerLink: '/professores' },
+    { label: 'Contato', icon: 'pi pi-envelope', routerLink: '/contato' }
+  ];
 }
